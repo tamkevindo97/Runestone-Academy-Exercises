@@ -46,7 +46,7 @@ for i in range(numdarts):  # create numdarts amount of darts
         fred.pencolor("orange")
         count4 = count4 + 1
     elif fred.distance(0,0) < 0.6:
-        fred.pencolor("yellow")
+        fred.pencolor("gold")
         count6 = count6 + 1
     elif fred.distance(0,0) < 0.8:
         fred.pencolor("light green")
@@ -55,7 +55,7 @@ for i in range(numdarts):  # create numdarts amount of darts
         fred.pencolor("light blue")
         count10 = count10 + 1
     else:
-        fred.pencolor("black")
+        fred.pencolor("purple")
         count0 = count0 + 1
 
     fred.dot()  # plate dot on the x,y position
