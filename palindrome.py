@@ -12,15 +12,15 @@ def reverse(string):
 
 # Modifies string to remove spaces and punctuation before comparing with reverse
 def palindrome(s):
-    mod1 = s.replace(" ", "")
-    mod2 = mod1.lower()
-    mod3 = mod2.translate(str.maketrans('', '', string.punctuation))
-    if reverse(mod3) == mod3:
+    mod1 = s.replace(" ", "") # Remove all spaces from string
+    mod2 = mod1.lower() # Make all letters in string lower case
+    mod3 = mod2.translate(str.maketrans('', '', string.punctuation)) # Remove all punctuation from string
+    if reverse(mod3) == mod3: 
         print("'", s, "'", "is a palindrome!")
     else:
         print("'", s, "'", "is not a palindrome.")
 
 # Test cases
-palindrome("Madam i'm Adam")
-palindrome("Madam i'm Kevin")
+palindrome("Madam I'm Adam")
+palindrome("Madam I'm Kevin")
 palindrome("Live not on evil")
