@@ -1,7 +1,3 @@
-
-import tkinter
-import matplotlib
-matplotlib.use('Agg')
 labdata = open("labdata.txt", "r")
 import turtle
 
