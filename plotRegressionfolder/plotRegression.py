@@ -14,27 +14,11 @@ for aline in labdata:
 print("x values: ", xvalues)
 print("y values: ", yvalues)
 
-
 def plotRegression(x, y):
     for i in range(len(x)):
         fred.penup()
-        fred.forward(x[i])
-        # technically i did not need to include these if,elif statements
-        # since all y values are positive
-        if y[i] > 0:
-            fred.left(90)
-            fred.forward(abs(y[i]))
-            fred.dot()
-            fred.home()
-        elif y[i] < 0:
-            fred.right(90)
-            fred.forward(abs(y[i]))
-            fred.dot()
-            fred.home()
-        else:
-            fred.forward(abs(y[i]))
-            fred.dot()
-            fred.home()
+        fred.goto(x[i], y[i])
+        fred.dot()
 
     # initialize sums for forloop
     sumxy = 0
@@ -59,20 +43,18 @@ def plotRegression(x, y):
     print("yplot values ", yplot)
     fred.pencolor("red")
     for avalue in range(len(xplot)):
-        fred.forward(xplot[avalue])
-        fred.left(90)
-        fred.forward(yplot[avalue])
+        fred.penup()
+        fred.goto(xplot[avalue], yplot[avalue])
         fred.dot()
-        fred.home()
-
 
 # Create Screen
 wn = turtle.Screen()
-wn.tracer(10)
+
 wn.setworldcoordinates(-100, -100, 100, 100)
 
 # Create x and y axes
 fred = turtle.Turtle()
+fred.speed(8)
 fred.forward(100)
 fred.backward(200)
 fred.home()
